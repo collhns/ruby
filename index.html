@@ -6,9 +6,10 @@
   <meta name="theme-color" content="#ffffff" />
   <title>Ruby 1.0</title>
 
-  <!-- Manifest & Icons -->
-  <link rel="manifest" href="manifest.json" />
+  <!-- Icons and Manifest -->
   <link rel="icon" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon-512.png" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <h1>Welcome to Ruby 1.0</h1>
@@ -19,7 +20,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('✅ Service Worker registered at:', reg.scope))
+          .then(reg => console.log('✅ Service Worker registered:', reg.scope))
           .catch(err => console.error('❌ Service Worker registration failed:', err));
       });
     }
