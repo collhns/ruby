@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Ruby 1.0</title>
+
+  <!-- Manifest & Icons -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" />
+</head>
+<body>
+  <h1>Welcome to Ruby 1.0</h1>
+  <p>This is your PWA base setup.</p>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('✅ Service Worker registered at:', reg.scope))
+          .catch(err => console.error('❌ Service Worker registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
